@@ -49,7 +49,12 @@ export default function App() {
         query +
         "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
         currentPage +
-        "&limit=10"
+        "&limit=10",
+      {
+        headers: {
+          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+        },
+      }
     );
     const results = await data.json();
     const resultItems = results.data;

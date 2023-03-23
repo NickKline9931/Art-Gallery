@@ -23,7 +23,12 @@ export default function Home({
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=10"
+      "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=10",
+      {
+        headers: {
+          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+        },
+      }
     );
     const data = await response.json();
     const artData = data.data;
