@@ -1,5 +1,5 @@
 import React from "react";
-import { usePersistentState } from "react-persistent-state";
+
 import useLocalStorageState from "use-local-storage-state";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -9,17 +9,39 @@ import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
-  const [title, setTitle] = usePersistentState("");
-  const [artist, setArtist] = usePersistentState("");
-  const [date, setDate] = usePersistentState("");
-  const [terms, setTerms] = usePersistentState([]);
-  const [imgUrl, setImgUrl] = usePersistentState("");
-  const [query, setQuery] = usePersistentState("");
-  const [searchResults, setSearchResults] = usePersistentState([]);
-  const [totalPages, setTotalPages] = usePersistentState(0);
-  const [currentPage, setCurrentPage] = usePersistentState(1);
-  const [theme, setTheme] = usePersistentState("dark");
-  const [iconSrc, setIconSrc] = usePersistentState("./../images/darktheme.png");
+  const [title, setTitle] = useLocalStorageState("title", {
+    defaultValue: "",
+  });
+  const [artist, setArtist] = useLocalStorageState("artist", {
+    defaultValue: "",
+  });
+  const [date, setDate] = useLocalStorageState("date", {
+    defaultValue: "",
+  });
+  const [terms, setTerms] = useLocalStorageState("terms", {
+    defaultValue: [],
+  });
+  const [imgUrl, setImgUrl] = useLocalStorageState("imgUrl", {
+    defaultValue: "",
+  });
+  const [query, setQuery] = useLocalStorageState("query", {
+    defaultValue: "",
+  });
+  const [searchResults, setSearchResults] = useLocalStorageState(
+    "searchResults",
+    {
+      defaultValue: [],
+    }
+  );
+  const [totalPages, setTotalPages] = useLocalStorageState("totalPages", {
+    defaultValue: 0,
+  });
+  const [currentPage, setCurrentPage] = useLocalStorageState("currentPage", {
+    defaultValue: 1,
+  });
+  const [theme, setTheme] = useLocalStorageState("theme", {
+    defaultValue: "dark",
+  });
 
   async function enterSearch() {
     const data = await fetch(
@@ -77,8 +99,6 @@ export default function App() {
             frameArtWork={frameArtWork}
             theme={theme}
             setTheme={setTheme}
-            iconSrc={iconSrc}
-            setIconSrc={setIconSrc}
           />
         }
       />
@@ -103,8 +123,6 @@ export default function App() {
             goToHomePage={goToHomePage}
             theme={theme}
             setTheme={setTheme}
-            iconSrc={iconSrc}
-            setIconSrc={setIconSrc}
           />
         }
       />
@@ -124,8 +142,6 @@ export default function App() {
             setCurrentPage={setCurrentPage}
             theme={theme}
             setTheme={setTheme}
-            iconSrc={iconSrc}
-            setIconSrc={setIconSrc}
           />
         }
       />

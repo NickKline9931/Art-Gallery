@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
+import useLocalStorageState from "use-local-storage-state";
 
 import Footer from "./Footer";
 
@@ -21,7 +22,9 @@ export default function Search({
   iconSrc,
   setIconSrc,
 }) {
-  const [pages, setPages] = usePersistentState([]);
+  const [pages, setPages] = useLocalStorageState("pages", {
+    defaultValue: [],
+  });
 
   function getPages() {
     const createPages = [];
