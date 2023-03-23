@@ -104,6 +104,7 @@ export default function App() {
             frameArtWork={frameArtWork}
             theme={theme}
             setTheme={setTheme}
+            terms={terms}
           />
         }
       />

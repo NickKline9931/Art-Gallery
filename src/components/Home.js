@@ -42,6 +42,10 @@ export default function Home({
     fetchData();
   });
 
+  useEffect(() => {
+    document.body.classList.add(theme);
+  }, []);
+
   const newDisplay = newWorks.map((work, index) => {
     return (
       <li key={index} onClick={() => frameArtWork(work)}>
