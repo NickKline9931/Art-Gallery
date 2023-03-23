@@ -1,5 +1,6 @@
 import React from "react";
 import { usePersistentState } from "react-persistent-state";
+import useLocalStorageState from "use-local-storage-state";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Frame from "./components/Frame";
