@@ -68,16 +68,21 @@ export default function Search({
 
   const pageNavigation = pages.map((page, index) => {
     return (
-      <li
+      <button
         key={index}
         data-testid={page}
         onClick={() => goToPageNumber(page)}
         style={currentPage === page ? { color: "purple" } : {}}
       >
         {page}
-      </li>
+      </button>
     );
   });
+
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(theme);
+  }, [theme]);
   return (
     <div className={theme}>
       <header>
@@ -97,7 +102,7 @@ export default function Search({
       <main>
         <h4>Results</h4>
         <ul>{searchResultsDisplay}</ul>
-        <ul>{pageNavigation}</ul>
+        <div>{pageNavigation}</div>
       </main>
       <footer>
         <Footer theme={theme} />

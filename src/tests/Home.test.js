@@ -1,11 +1,12 @@
 import React from "react";
 import Home from "./../components/Home";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 describe("Home component", () => {
   it("renders correct heading", () => {
-    const { getByRole } = render(<Home />);
-    expect(getByRole("heading").textContent).toBe("Newest Works");
+    render(<Home />);
+    const heading = screen.getByTestId("lastUpdated");
+    expect(heading.textContent).toBe("Last Updated");
   });
 
   it("renders NewWorks component list", () => {

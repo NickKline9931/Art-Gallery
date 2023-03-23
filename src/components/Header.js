@@ -29,7 +29,9 @@ export default function Header({
         onChange={changeQuery}
         id="searchBox"
       ></input>
-      <button onClick={() => enterSearch()}>Search</button>
+      <button onClick={() => enterSearch()} data-testid="searchButton">
+        Search
+      </button>
       <button onClick={changeTheme}>
         <img src={theme === "light" ? light : dark} alt="theme"></img>
       </button>

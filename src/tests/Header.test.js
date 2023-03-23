@@ -6,12 +6,11 @@ import Header from "./../components/Header";
 
 describe("Header component", () => {
   it("calls enterSearch function on button click", async () => {
-    const user = userEvent.setup();
     const enterSearchMock = jest.fn();
     render(<Header enterSearch={enterSearchMock} />);
-    const button = screen.getByRole("button");
+    const button = screen.getByTestId("searchButton");
 
-    await user.click(button);
+    await userEvent.click(button);
     expect(enterSearchMock).toHaveBeenCalled();
   });
 });
