@@ -100,7 +100,7 @@ export default function Search({
         <ul>{pageNavigation}</ul>
       </main>
       <footer>
-        <Footer />
+        <Footer theme={theme} />
       </footer>
     </div>
   );

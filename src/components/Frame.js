@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
 import Tags from "./Tags";
 import Footer from "./Footer";
@@ -25,6 +25,10 @@ export default function Frame({
   iconSrc,
   setIconSrc,
 }) {
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(theme);
+  }, [theme]);
   return (
     <div className={theme}>
       <header>
@@ -58,7 +62,7 @@ export default function Frame({
         </div>
       </main>
       <footer>
-        <Footer />
+        <Footer theme={theme} />
       </footer>
     </div>
   );

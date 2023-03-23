@@ -43,8 +43,9 @@ export default function Home({
   });
 
   useEffect(() => {
+    document.body.className = "";
     document.body.classList.add(theme);
-  }, []);
+  }, [theme]);
 
   const newDisplay = newWorks.map((work, index) => {
     return (
@@ -82,7 +83,7 @@ export default function Home({
         <ul className={theme}>{newDisplay}</ul>
       </main>
       <footer>
-        <Footer />
+        <Footer theme={theme} />
       </footer>
     </div>
   );
