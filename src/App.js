@@ -37,19 +37,18 @@ export default function App() {
     defaultValue: 0,
   });
   const [currentPage, setCurrentPage] = useLocalStorageState("currentPage", {
-    defaultValue: 1,
+    defaultValue: 0,
   });
   const [theme, setTheme] = useLocalStorageState("theme", {
     defaultValue: "dark",
   });
 
   async function enterSearch() {
+    setCurrentPage(1);
     const data = await fetch(
       "https://api.artic.edu/api/v1/artworks/search?q=" +
         query +
-        "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
-        currentPage +
-        "&limit=10",
+        "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=1&limit=10",
       {
         headers: {
           "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",

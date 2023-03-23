@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
+import "./../styles/Search.css";
 import useLocalStorageState from "use-local-storage-state";
 
 import Footer from "./Footer";
@@ -30,7 +31,7 @@ export default function Search({
     const createPages = [];
 
     for (let i = 0; i < totalPages; i++) {
-      if (createPages.length === 1000) {
+      if (createPages.length === 100) {
         break;
       }
       createPages.push(i + 1);
@@ -38,10 +39,35 @@ export default function Search({
     setPages(createPages);
   }
 
-  function goToPageNumber(page) {
+  async function goToPageNumber(page) {
     setCurrentPage(page);
-    enterSearch();
   }
+
+  async function renderPageItems() {
+    const data = await fetch(
+      "https://api.artic.edu/api/v1/artworks/search?q=" +
+        query +
+        "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
+        currentPage +
+        "&limit=10",
+      {
+        headers: {
+          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+        },
+      }
+    );
+    const results = await data.json();
+    const resultItems = results.data;
+    setSearchResults(resultItems);
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
+  }
+
+  useEffect(() => {
+    renderPageItems();
+  }, [currentPage]);
 
   useEffect(() => {
     if (totalPages !== 0) {
@@ -69,6 +95,7 @@ export default function Search({
   const pageNavigation = pages.map((page, index) => {
     return (
       <button
+        className="pageButton"
         key={index}
         data-testid={page}
         onClick={() => goToPageNumber(page)}
@@ -100,6 +127,9 @@ export default function Search({
         />
       </header>
       <main>
+        <h1>
+          Page {currentPage} of {totalPages}
+        </h1>
         <h4>Results</h4>
         <ul>{searchResultsDisplay}</ul>
         <div>{pageNavigation}</div>

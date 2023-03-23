@@ -8,16 +8,10 @@ export default function Tags({ terms, enterSearch, setQuery }) {
   }
   const tags = terms.map((tag, index) => {
     return (
-      <li key={index}>
-        <button className="tags" onClick={() => searchWithTag(tag)}>
-          <h3>{tag}</h3>
-        </button>
-      </li>
+      <button className="tags" onClick={() => searchWithTag(tag)}>
+        <h3>{tag}</h3>
+      </button>
     );
   });
-  return (
-    <div>
-      <ul>{tags}</ul>
-    </div>
-  );
+  return <div className="tagContainer">{tags}</div>;
 }
