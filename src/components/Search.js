@@ -94,15 +94,29 @@ export default function Search({
 
   const pageNavigation = pages.map((page, index) => {
     return (
-      <button
-        className="pageButton"
+      <div
         key={index}
-        data-testid={page}
-        onClick={() => goToPageNumber(page)}
-        style={currentPage === page ? { color: "purple" } : {}}
+        style={
+          currentPage < 5
+            ? page < 6
+              ? { display: "flex" }
+              : { display: "none" }
+            : (page <= currentPage && page > currentPage - 4) ||
+              page === currentPage + 1
+            ? { display: "flex" }
+            : { display: "none" }
+        }
       >
-        {page}
-      </button>
+        <button
+          className="pageButton"
+          key={index}
+          data-testid={page}
+          onClick={() => goToPageNumber(page)}
+          style={currentPage === page ? { color: "purple" } : { color: "blue" }}
+        >
+          {page}
+        </button>
+      </div>
     );
   });
 
