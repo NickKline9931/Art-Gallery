@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
 import Tags from "./Tags";
+import whitehome from "./../images/whitehome.png";
+import blackhome from "./../images/blackhome.png";
 import Footer from "./Footer";
 
 export default function Frame({
@@ -32,7 +34,9 @@ export default function Frame({
   return (
     <div className={theme}>
       <header>
-        <button onClick={() => goToHomePage()}>Home</button>
+        <button onClick={() => goToHomePage()} className="homeButton">
+          <img src={theme === "dark" ? whitehome : blackhome} />
+        </button>
         <Header
           query={query}
           changeQuery={changeQuery}

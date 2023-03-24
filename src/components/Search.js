@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
+import whitehome from "./../images/whitehome.png";
+import blackhome from "./../images/blackhome.png";
 import "./../styles/Search.css";
 import useLocalStorageState from "use-local-storage-state";
 
@@ -136,7 +138,9 @@ export default function Search({
   return (
     <div className={theme}>
       <header>
-        <button onClick={() => goToHomePage()}>Home</button>
+        <button onClick={() => goToHomePage()} className="homeButton">
+          <img src={theme === "dark" ? whitehome : blackhome} />
+        </button>
         <Header
           query={query}
           changeQuery={changeQuery}

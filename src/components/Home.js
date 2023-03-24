@@ -26,7 +26,7 @@ export default function Home({
       "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=10",
       {
         headers: {
-          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+          "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
         },
       }
     );

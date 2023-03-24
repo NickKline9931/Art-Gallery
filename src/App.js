@@ -51,7 +51,7 @@ export default function App() {
         "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=1&limit=10",
       {
         headers: {
-          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+          "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
         },
       }
     );

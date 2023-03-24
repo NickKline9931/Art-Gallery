@@ -16,3 +16,8 @@
 .pageNumbers {
   display: flex;
 }
+
+.homeButton {
+  border: none;
+  background: none;
+}
