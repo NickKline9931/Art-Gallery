@@ -60,7 +60,11 @@ export default function App() {
     setSearchResults(resultItems);
     const pagination = results.pagination;
     const pageTotal = pagination.total_pages;
-    setTotalPages(pageTotal);
+    if (pageTotal < 100) {
+      setTotalPages(pageTotal);
+    } else {
+      setTotalPages(100);
+    }
     navigate("/search");
   }
 

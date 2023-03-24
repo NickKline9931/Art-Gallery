@@ -31,9 +31,6 @@ export default function Search({
     const createPages = [];
 
     for (let i = 0; i < totalPages; i++) {
-      if (createPages.length === 100) {
-        break;
-      }
       createPages.push(i + 1);
     }
     setPages(createPages);
@@ -52,7 +49,7 @@ export default function Search({
         "&limit=10",
       {
         headers: {
-          "AIC-User-Agent": "ArtGallery (nickkline9931@gmail.com)",
+          "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
         },
       }
     );
@@ -120,6 +117,16 @@ export default function Search({
     );
   });
 
+  function goToFirstPage() {
+    const firstPage = pages[0];
+    setCurrentPage(firstPage);
+  }
+
+  function goToLastPage() {
+    const lastPage = pages[pages.length - 1];
+    setCurrentPage(lastPage);
+  }
+
   useEffect(() => {
     document.body.className = "";
     document.body.classList.add(theme);
@@ -146,7 +153,11 @@ export default function Search({
         </h1>
         <h4>Results</h4>
         <ul>{searchResultsDisplay}</ul>
-        <div>{pageNavigation}</div>
+        <div className="pageNavBar">
+          <button onClick={goToFirstPage}>&lt;&lt;</button>
+          <div className="pageNumbers">{pageNavigation}</div>
+          <button onClick={goToLastPage}>&gt;&gt;</button>
+        </div>
       </main>
       <footer>
         <Footer theme={theme} />
