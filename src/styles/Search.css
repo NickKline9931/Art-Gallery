@@ -6,3 +6,13 @@
 .pageNavBar {
   display: flex;
 }
+
+.arrowButton {
+  background: none;
+  border: none;
+  color: blue;
+}
+
+.pageNumbers {
+  display: flex;
+}

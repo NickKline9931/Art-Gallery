@@ -109,7 +109,9 @@ export default function Search({
           key={index}
           data-testid={page}
           onClick={() => goToPageNumber(page)}
-          style={currentPage === page ? { color: "purple" } : { color: "blue" }}
+          style={
+            currentPage === page ? { color: "#CC00CC" } : { color: "blue" }
+          }
         >
           {page}
         </button>
@@ -154,9 +156,13 @@ export default function Search({
         <h4>Results</h4>
         <ul>{searchResultsDisplay}</ul>
         <div className="pageNavBar">
-          <button onClick={goToFirstPage}>&lt;&lt;</button>
+          <button onClick={goToFirstPage} className="arrowButton">
+            &lt;&lt;
+          </button>
           <div className="pageNumbers">{pageNavigation}</div>
-          <button onClick={goToLastPage}>&gt;&gt;</button>
+          <button onClick={goToLastPage} className="arrowButton">
+            &gt;&gt;
+          </button>
         </div>
       </main>
       <footer>
