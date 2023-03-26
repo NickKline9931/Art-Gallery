@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  padding-top: 10px;
 }
 
 li {
@@ -15,4 +16,34 @@ li {
 .dark {
   background-color: black;
   color: white;
+}
+
+.thumbNails {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  max-width: 800px;
+}
+
+.thumbNails > * {
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeContainer > * {
+  margin: auto;
+}
+
+.homeContainer > main {
+  display: flex;
+  flex-direction: column;
+}
+
+.homeContainer > main > * {
+  margin: auto;
 }

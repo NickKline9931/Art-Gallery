@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer({ theme }) {
   return (
     <div className={theme}>
-      <h5>Uses Art Institute of Chicago API</h5>
+      <h6>Uses Art Institute of Chicago API. Icons from icons8.com</h6>
     </div>
   );
 }

@@ -76,7 +76,11 @@ export default function Search({
 
   const searchResultsDisplay = searchResults.map((result, index) => {
     return (
-      <li key={index} onClick={() => frameArtWork(result)}>
+      <li
+        key={index}
+        onClick={() => frameArtWork(result)}
+        className="thumbNails"
+      >
         <img
           src={
             "https://www.artic.edu/iiif/2/" +
@@ -85,7 +89,7 @@ export default function Search({
           }
           alt={result.title}
         />
-        <h4>{result.title}</h4>
+        <h4 className="thumbNailTitles">{result.title}</h4>
         <h5>{result.artist_display}</h5>
       </li>
     );

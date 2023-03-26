@@ -40,7 +40,7 @@ export default function Home({
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   useEffect(() => {
     document.body.className = "";
@@ -49,7 +49,7 @@ export default function Home({
 
   const newDisplay = newWorks.map((work, index) => {
     return (
-      <li key={index} onClick={() => frameArtWork(work)}>
+      <li key={index} onClick={() => frameArtWork(work)} className="thumbNails">
         <img
           src={
             "https://www.artic.edu/iiif/2/" +
@@ -58,14 +58,14 @@ export default function Home({
           }
           alt={work.title}
         />
-        <h4>{work.title}</h4>
+        <h4 className="thumbNailTitles">{work.title}</h4>
         <h5>{work.artist_display}</h5>
       </li>
     );
   });
 
   return (
-    <div className={theme}>
+    <div className="homeContainer">
       <header>
         <Header
           query={query}

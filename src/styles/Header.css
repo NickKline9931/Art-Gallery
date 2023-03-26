@@ -1,0 +1,37 @@
+.themeButton {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: -200px;
+  top: 0;
+}
+
+.themeButton > img {
+  width: 800%;
+  height: auto;
+}
+
+.headerContainer {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.headerContainer > form {
+  display: flex;
+  align-items: center;
+}
+
+.searchButton {
+  height: 25px;
+  width: 25px;
+  background: none;
+  border: none;
+}
+
+.searchButton > img {
+  width: 150%;
+  height: auto;
+}
