@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "./../styles/Home.css";
 import Footer from "./Footer";
+import ThemeIcon from "./ThemeIcon";
 
 export default function Home({
   setTitle,
@@ -23,7 +24,7 @@ export default function Home({
 
   const fetchData = async () => {
     const response = await fetch(
-      "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=10",
+      "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=12",
       {
         headers: {
           "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
@@ -66,6 +67,7 @@ export default function Home({
 
   return (
     <div className="homeContainer">
+      <ThemeIcon theme={theme} setTheme={setTheme} />
       <header>
         <Header
           query={query}
@@ -78,9 +80,9 @@ export default function Home({
           setIconSrc={setIconSrc}
         />
       </header>
-      <main className={theme}>
+      <main>
         <h1 data-testid="lastUpdated">Last Updated</h1>
-        <ul className={theme}>{newDisplay}</ul>
+        <ul className="lastUpdatedWorks">{newDisplay}</ul>
       </main>
       <footer>
         <Footer theme={theme} />

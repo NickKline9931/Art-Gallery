@@ -4,6 +4,7 @@ import whitehome from "./../images/whitehome.png";
 import blackhome from "./../images/blackhome.png";
 import "./../styles/Search.css";
 import useLocalStorageState from "use-local-storage-state";
+import ThemeIcon from "./ThemeIcon";
 
 import Footer from "./Footer";
 
@@ -140,11 +141,12 @@ export default function Search({
     document.body.classList.add(theme);
   }, [theme]);
   return (
-    <div className={theme}>
+    <div className="searchContainer">
+      <button onClick={() => goToHomePage()} className="homeButton">
+        <img src={theme === "dark" ? whitehome : blackhome} />
+      </button>
+      <ThemeIcon theme={theme} setTheme={setTheme} />
       <header>
-        <button onClick={() => goToHomePage()} className="homeButton">
-          <img src={theme === "dark" ? whitehome : blackhome} />
-        </button>
         <Header
           query={query}
           changeQuery={changeQuery}

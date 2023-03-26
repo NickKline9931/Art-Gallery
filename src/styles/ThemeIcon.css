@@ -1,0 +1,13 @@
+.themeIconContainer {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeIcon {
+  height: 40px;
+  width: 40px;
+}

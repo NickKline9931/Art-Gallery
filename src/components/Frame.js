@@ -4,6 +4,8 @@ import Tags from "./Tags";
 import whitehome from "./../images/whitehome.png";
 import blackhome from "./../images/blackhome.png";
 import Footer from "./Footer";
+import "./../styles/Frame.css";
+import ThemeIcon from "./ThemeIcon";
 
 export default function Frame({
   setTitle,
@@ -32,11 +34,12 @@ export default function Frame({
     document.body.classList.add(theme);
   }, [theme]);
   return (
-    <div className={theme}>
+    <div className="frameContainer">
+      <button onClick={() => goToHomePage()} className="homeButton">
+        <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
+      </button>
+      <ThemeIcon theme={theme} setTheme={setTheme} />
       <header>
-        <button onClick={() => goToHomePage()} className="homeButton">
-          <img src={theme === "dark" ? whitehome : blackhome} />
-        </button>
         <Header
           query={query}
           changeQuery={changeQuery}
@@ -51,18 +54,20 @@ export default function Frame({
       </header>
       <main>
         <div className="sideBar">
-          <h3 id="frameTitle">{title}</h3>
-          <h4 id="frameArtist">{artist}</h4>
-          <h5 id="frameDate">{date}</h5>
-        </div>
-        <div className="imageAndTags">
-          <img src={imgUrl} alt={title}></img>
+          <div className="framedWorkInfo">
+            <h3 id="frameTitle">{title}</h3>
+            <h4 id="frameArtist">{artist}</h4>
+            <h5 id="frameDate">{date}</h5>
+          </div>
           <Tags
             terms={terms}
             navigate={navigate}
             enterSearch={enterSearch}
             setQuery={setQuery}
           />
+        </div>
+        <div className="framedImage">
+          <img src={imgUrl} alt={title}></img>
         </div>
       </main>
       <footer>
