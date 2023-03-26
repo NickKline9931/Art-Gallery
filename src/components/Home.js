@@ -82,7 +82,7 @@ export default function Home({
       </header>
       <main>
         <h1 data-testid="lastUpdated">Last Updated</h1>
-        <ul className="lastUpdatedWorks">{newDisplay}</ul>
+        <ul className="worksList">{newDisplay}</ul>
       </main>
       <footer>
         <Footer theme={theme} />

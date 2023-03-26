@@ -49,7 +49,7 @@ export default function Search({
         query +
         "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
         currentPage +
-        "&limit=10",
+        "&limit=12",
       {
         headers: {
           "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
@@ -164,7 +164,7 @@ export default function Search({
           Page {currentPage} of {totalPages}
         </h1>
         <h4>Results</h4>
-        <ul>{searchResultsDisplay}</ul>
+        <ul className="worksList">{searchResultsDisplay}</ul>
         <div className="pageNavBar">
           <button onClick={goToFirstPage} className="arrowButton">
             &lt;&lt;
