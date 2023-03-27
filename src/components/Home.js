@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "./../styles/Home.css";
 import Footer from "./Footer";
-import ThemeIcon from "./ThemeIcon";
 
 export default function Home({
-  setTitle,
-  setArtist,
-  setDate,
-  setTerms,
-  setImgUrl,
+  homeButtonDisplay,
+  setHomeButtonDisplay,
   navigate,
   setQuery,
   query,
@@ -21,6 +17,10 @@ export default function Home({
   setIconSrc,
 }) {
   const [newWorks, setNewWorks] = useState([]);
+
+  useEffect(() => {
+    setHomeButtonDisplay("off");
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -71,7 +71,6 @@ export default function Home({
 
   return (
     <div className="homeContainer">
-      <ThemeIcon theme={theme} setTheme={setTheme} />
       <header>
         <Header
           query={query}
@@ -82,6 +81,7 @@ export default function Home({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
+          homeButtonDisplay={homeButtonDisplay}
         />
       </header>
       <main>

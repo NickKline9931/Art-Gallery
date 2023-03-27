@@ -2,6 +2,9 @@ import React from "react";
 import "./../styles/Header.css";
 import darkSearch from "./../images/darksearch.png";
 import lightSearch from "./../images/lightsearch.png";
+import whitehome from "./../images/whitehome.png";
+import blackhome from "./../images/blackhome.png";
+import ThemeIcon from "./ThemeIcon";
 
 export default function Header({
   query,
@@ -9,6 +12,8 @@ export default function Header({
   setQuery,
   theme,
   setTheme,
+  goToHomePage,
+  homeButtonDisplay,
 }) {
   function changeQuery(e) {
     setQuery(e.target.value);
@@ -16,6 +21,15 @@ export default function Header({
 
   return (
     <div className="headerContainer">
+      <button
+        onClick={() => goToHomePage()}
+        className="homeButton"
+        style={
+          homeButtonDisplay === "on" ? { display: "flex" } : { display: "none" }
+        }
+      >
+        <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
+      </button>
       <input
         type="text"
         value={query}
@@ -30,6 +44,7 @@ export default function Header({
       >
         <img src={theme === "light" ? lightSearch : darkSearch} />
       </button>
+      <ThemeIcon theme={theme} setTheme={setTheme} />
     </div>
   );
 }

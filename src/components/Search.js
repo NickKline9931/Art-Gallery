@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
-import whitehome from "./../images/whitehome.png";
-import blackhome from "./../images/blackhome.png";
 import "./../styles/Search.css";
 import useLocalStorageState from "use-local-storage-state";
-import ThemeIcon from "./ThemeIcon";
 
 import Footer from "./Footer";
 
 export default function Search({
+  homeButtonDisplay,
+  setHomeButtonDisplay,
   query,
   setQuery,
   changeQuery,
@@ -29,6 +28,10 @@ export default function Search({
   const [pages, setPages] = useLocalStorageState("pages", {
     defaultValue: [],
   });
+
+  useEffect(() => {
+    setHomeButtonDisplay("on");
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -146,10 +149,6 @@ export default function Search({
   }, [theme]);
   return (
     <div className="searchContainer">
-      <button onClick={() => goToHomePage()} className="homeButton">
-        <img src={theme === "dark" ? whitehome : blackhome} />
-      </button>
-      <ThemeIcon theme={theme} setTheme={setTheme} />
       <header>
         <Header
           query={query}
@@ -161,6 +160,8 @@ export default function Search({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
+          goToHomePage={goToHomePage}
+          homeButtonDisplay={homeButtonDisplay}
         />
       </header>
       <main>

@@ -43,6 +43,13 @@ export default function App() {
     defaultValue: "dark",
   });
 
+  const [homeButtonDisplay, setHomeButtonDisplay] = useLocalStorageState(
+    "homeButtonDisplay",
+    {
+      defaultValue: "",
+    }
+  );
+
   async function enterSearch() {
     setCurrentPage(1);
     const data = await fetch(
@@ -108,6 +115,8 @@ export default function App() {
             theme={theme}
             setTheme={setTheme}
             terms={terms}
+            homeButtonDisplay={homeButtonDisplay}
+            setHomeButtonDisplay={setHomeButtonDisplay}
           />
         }
       />
@@ -132,6 +141,8 @@ export default function App() {
             goToHomePage={goToHomePage}
             theme={theme}
             setTheme={setTheme}
+            homeButtonDisplay={homeButtonDisplay}
+            setHomeButtonDisplay={setHomeButtonDisplay}
           />
         }
       />
@@ -151,6 +162,8 @@ export default function App() {
             setCurrentPage={setCurrentPage}
             theme={theme}
             setTheme={setTheme}
+            homeButtonDisplay={homeButtonDisplay}
+            setHomeButtonDisplay={setHomeButtonDisplay}
           />
         }
       />
