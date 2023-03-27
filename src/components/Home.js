@@ -22,6 +22,10 @@ export default function Home({
 }) {
   const [newWorks, setNewWorks] = useState([]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const fetchData = async () => {
     const response = await fetch(
       "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=12",

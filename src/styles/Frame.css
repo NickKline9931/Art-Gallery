@@ -2,6 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: auto;
 }
 
 .frameContainer > * {
@@ -20,23 +22,45 @@
 
 .frameContainer > main {
   display: flex;
+
+  width: 100%;
 }
 
 .sideBar {
-  padding-top: 3%;
   width: 35%;
   display: flex;
   flex-direction: column;
+  padding-top: 5%;
+  margin-right: 80px;
+}
+
+.sideBar > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .framedWorkInfo {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .framedWorkInfo > * {
   margin: auto;
+}
+
+.framedWorkTitle {
+  margin: auto;
+  text-align: center;
+  overflow-wrap: normal;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding-left: 10%;
 }
 
 .homeButton {
@@ -46,4 +70,12 @@
   position: absolute;
   left: 0;
   top: -7px;
+}
+
+.framedImage {
+  max-width: 45%;
+}
+
+.framedImage > * {
+  width: 100%;
 }

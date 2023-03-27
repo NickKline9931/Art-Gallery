@@ -30,9 +30,14 @@ export default function Frame({
   setIconSrc,
 }) {
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     document.body.className = "";
     document.body.classList.add(theme);
   }, [theme]);
+
   return (
     <div className="frameContainer">
       <button onClick={() => goToHomePage()} className="homeButton">
@@ -55,16 +60,19 @@ export default function Frame({
       <main>
         <div className="sideBar">
           <div className="framedWorkInfo">
-            <h3 id="frameTitle">{title}</h3>
-            <h4 id="frameArtist">{artist}</h4>
-            <h5 id="frameDate">{date}</h5>
+            <h3 className="framedWorkTitle">{title}</h3>
+
+            <h4>{artist}</h4>
+            <h5>{date}</h5>
           </div>
-          <Tags
-            terms={terms}
-            navigate={navigate}
-            enterSearch={enterSearch}
-            setQuery={setQuery}
-          />
+          <div className="tagContainer">
+            <Tags
+              terms={terms}
+              navigate={navigate}
+              enterSearch={enterSearch}
+              setQuery={setQuery}
+            />
+          </div>
         </div>
         <div className="framedImage">
           <img src={imgUrl} alt={title}></img>

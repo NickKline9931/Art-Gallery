@@ -30,6 +30,10 @@ export default function Search({
     defaultValue: [],
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   function getPages() {
     const createPages = [];
 
