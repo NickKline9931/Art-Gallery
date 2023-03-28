@@ -1,10 +1,14 @@
 .themeIconContainer {
+  height: 40px;
+  width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .themeIcon {
-  height: 40px;
-  width: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

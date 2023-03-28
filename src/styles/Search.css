@@ -1,3 +1,13 @@
+.searchContainer > * {
+  margin: auto;
+}
+
+.searchContainer {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .pageButton {
   border: none;
   background: none;

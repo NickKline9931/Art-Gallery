@@ -1,8 +1,19 @@
 .headerContainer {
-  position: relative;
   margin-bottom: 20px;
   display: flex;
+  width: 100%;
   align-items: center;
+}
+
+.headerContainer > * {
+  margin: auto;
+}
+
+.headerContainer > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .searchButton {
@@ -10,9 +21,18 @@
   width: 25px;
   background: none;
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .searchButton > img {
   width: 150%;
   height: auto;
+}
+
+.homeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

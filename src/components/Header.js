@@ -30,21 +30,23 @@ export default function Header({
       >
         <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
       </button>
-      <input
-        type="text"
-        value={query}
-        onChange={changeQuery}
-        id="searchBox"
-      ></input>
-      <button
-        type="button"
-        onClick={() => enterSearch()}
-        data-testid="searchButton"
-        className="searchButton"
-      >
-        <img src={theme === "light" ? lightSearch : darkSearch} />
-      </button>
-      <ThemeIcon theme={theme} setTheme={setTheme} />
+      <form>
+        <input
+          type="text"
+          value={query}
+          onChange={changeQuery}
+          id="searchBox"
+        ></input>
+        <button
+          type="button"
+          onClick={() => enterSearch()}
+          data-testid="searchButton"
+          className="searchButton"
+        >
+          <img src={theme === "light" ? lightSearch : darkSearch} />
+        </button>
+        <ThemeIcon theme={theme} setTheme={setTheme} />
+      </form>
     </div>
   );
 }

@@ -11,8 +11,6 @@
 }
 
 .frameContainer > header {
-  display: flex;
-  flex-direction: column;
   margin-bottom: 30px;
 }
 
@@ -22,7 +20,6 @@
 
 .frameContainer > main {
   display: flex;
-
   width: 100%;
 }
 
@@ -61,15 +58,6 @@
   flex-wrap: wrap;
   max-width: 100%;
   padding-left: 10%;
-}
-
-.homeButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 0;
-  top: -7px;
 }
 
 .framedImage {
