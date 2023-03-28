@@ -14,9 +14,18 @@ export default function Header({
   setTheme,
   goToHomePage,
   homeButtonDisplay,
+  navigate,
 }) {
   function changeQuery(e) {
     setQuery(e.target.value);
+  }
+
+  function goToHomePage() {
+    navigate("/");
+  }
+
+  function goToFavorites() {
+    navigate("/favorites");
   }
 
   return (
@@ -29,6 +38,10 @@ export default function Header({
         }
       >
         <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
+      </button>
+
+      <button type="button" onClick={goToFavorites}>
+        Favorites
       </button>
       <form>
         <input

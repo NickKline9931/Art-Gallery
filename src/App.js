@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Frame from "./components/Frame";
 import Search from "./components/Search";
+import Favorites from "./components/Favorites";
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
@@ -75,10 +76,6 @@ export default function App() {
     navigate("/search");
   }
 
-  function goToHomePage() {
-    navigate("/");
-  }
-
   function frameArtWork(work) {
     const workTitle = work.title;
     setTitle(workTitle);
@@ -138,7 +135,6 @@ export default function App() {
             setQuery={setQuery}
             navigate={navigate}
             enterSearch={enterSearch}
-            goToHomePage={goToHomePage}
             theme={theme}
             setTheme={setTheme}
             homeButtonDisplay={homeButtonDisplay}
@@ -155,7 +151,6 @@ export default function App() {
             searchResults={searchResults}
             setSearchResults={setSearchResults}
             enterSearch={enterSearch}
-            goToHomePage={goToHomePage}
             frameArtWork={frameArtWork}
             totalPages={totalPages}
             currentPage={currentPage}
@@ -164,6 +159,18 @@ export default function App() {
             setTheme={setTheme}
             homeButtonDisplay={homeButtonDisplay}
             setHomeButtonDisplay={setHomeButtonDisplay}
+          />
+        }
+      />
+      <Route
+        path="/favorites"
+        element={
+          <Favorites
+            setHomeButtonDisplay={setHomeButtonDisplay}
+            homeButtonDisplay={homeButtonDisplay}
+            setTheme={setTheme}
+            theme={theme}
+            navigate={navigate}
           />
         }
       />

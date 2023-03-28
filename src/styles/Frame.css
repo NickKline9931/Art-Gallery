@@ -2,8 +2,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: auto;
 }
 
 .frameContainer > * {
@@ -20,15 +18,19 @@
 
 .frameContainer > main {
   display: flex;
-  width: 100%;
+  align-items: flex-start;
+}
+
+.frameContainer > main > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sideBar {
-  width: 35%;
+  max-width: 25%;
   display: flex;
   flex-direction: column;
   padding-top: 5%;
-  margin-right: 80px;
 }
 
 .sideBar > * {
@@ -45,6 +47,7 @@
 
 .framedWorkInfo > * {
   margin: auto;
+  text-align: center;
 }
 
 .framedWorkTitle {
@@ -56,12 +59,7 @@
 .tagContainer {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
-  padding-left: 10%;
-}
-
-.framedImage {
-  max-width: 45%;
+  max-width: 120%;
 }
 
 .framedImage > * {

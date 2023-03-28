@@ -17,7 +17,7 @@ export default function Frame({
   changeQuery,
   navigate,
   enterSearch,
-  goToHomePage,
+
   theme,
   setTheme,
   iconSrc,
@@ -49,14 +49,13 @@ export default function Frame({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
-          goToHomePage={goToHomePage}
           homeButtonDisplay={homeButtonDisplay}
         />
       </header>
       <main>
         <div className="sideBar">
           <div className="framedWorkInfo">
-            <h3 className="framedWorkTitle">{title}</h3>
+            <h2 className="framedWorkTitle">{title}</h2>
 
             <h4>{artist}</h4>
             <h5>{date}</h5>
