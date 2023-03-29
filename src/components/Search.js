@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Header from "./Header";
 import "./../styles/Search.css";
 import useLocalStorageState from "use-local-storage-state";
+import unfavorite from "./../images/unfavorite.png";
+import favorite from "./../images/favorite.png";
 
 import Footer from "./Footer";
 
@@ -25,7 +27,7 @@ export default function Search({
   iconSrc,
   setIconSrc,
   favorites,
-  toggleFavorites,
+  toggleFavorite,
 }) {
   const [pages, setPages] = useLocalStorageState("pages", {
     defaultValue: [],
@@ -56,7 +58,7 @@ export default function Search({
     const data = await fetch(
       "https://api.artic.edu/api/v1/artworks/search?q=" +
         query +
-        "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
+        "&fields=id,title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=" +
         currentPage +
         "&limit=12",
       {
@@ -84,23 +86,29 @@ export default function Search({
     }
   }, [totalPages]);
 
-  const searchResultsDisplay = searchResults.map((result, index) => {
+  const searchResultsDisplay = searchResults.map((work, index) => {
     return (
-      <li
-        key={index}
-        onClick={() => frameArtWork(result)}
-        className="thumbNails"
-      >
+      <li key={index} className="thumbNails">
+        <img
+          src={
+            favorites.some((item) => item.id === work.id)
+              ? favorite
+              : unfavorite
+          }
+          alt="favorite"
+          onClick={() => toggleFavorite(work)}
+        />
         <img
           src={
             "https://www.artic.edu/iiif/2/" +
-            result.image_id +
+            work.image_id +
             "/full/843,/0/default.jpg"
           }
-          alt={result.title}
+          alt={work.title}
+          onClick={() => frameArtWork(work)}
         />
-        <h4 className="thumbNailTitles">{result.title}</h4>
-        <h5>{result.artist_display}</h5>
+        <h4 className="thumbNailTitles">{work.title}</h4>
+        <h5>{work.artist_display}</h5>
       </li>
     );
   });

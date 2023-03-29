@@ -182,6 +182,7 @@ export default function App() {
             setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
+            navigate={navigate}
           />
         }
       />
@@ -196,6 +197,10 @@ export default function App() {
             navigate={navigate}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
+            frameArtWork={frameArtWork}
+            query={query}
+            setQuery={setQuery}
+            enterSearch={enterSearch}
           />
         }
       />
