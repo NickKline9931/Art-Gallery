@@ -19,12 +19,18 @@ export default function Home({
   setIconSrc,
   favorites,
   toggleFavorite,
+  favoritesButtonDisplay,
+  setFavoritesButtonDisplay,
 }) {
   const [newWorks, setNewWorks] = useState([]);
 
   useEffect(() => {
     setHomeButtonDisplay("off");
   }, []);
+
+  useEffect(() => {
+    setFavoritesButtonDisplay("on");
+  });
 
   useEffect(() => {
     return () => {
@@ -102,6 +108,7 @@ export default function Home({
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
           homeButtonDisplay={homeButtonDisplay}
+          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>

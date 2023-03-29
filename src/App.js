@@ -48,6 +48,11 @@ export default function App() {
     }
   );
 
+  const [favoritesButtonDisplay, setFavoritesButtonDisplay] =
+    useLocalStorageState("favoritesButtonDisplay", {
+      defaultValue: "",
+    });
+
   function toggleFavorite(work) {
     if (favorites.some((item) => item.id === work.id)) {
       const newFavorites = favorites.filter((item) => {
@@ -112,6 +117,8 @@ export default function App() {
             setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
+            favoritesButtonDisplay={favoritesButtonDisplay}
+            setFavoritesButtonDisplay={setFavoritesButtonDisplay}
           />
         }
       />
@@ -132,6 +139,7 @@ export default function App() {
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}
+            favoritesButtonDisplay={favoritesButtonDisplay}
           />
         }
       />
@@ -155,6 +163,7 @@ export default function App() {
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             navigate={navigate}
+            favoritesButtonDisplay={favoritesButtonDisplay}
           />
         }
       />
@@ -173,6 +182,8 @@ export default function App() {
             query={query}
             setQuery={setQuery}
             enterSearch={enterSearch}
+            favoritesButtonDisplay={favoritesButtonDisplay}
+            setFavoritesButtonDisplay={setFavoritesButtonDisplay}
           />
         }
       />

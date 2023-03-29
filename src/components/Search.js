@@ -28,6 +28,7 @@ export default function Search({
   setIconSrc,
   favorites,
   toggleFavorite,
+  favoritesButtonDisplay,
 }) {
   const [pages, setPages] = useLocalStorageState("pages", {
     defaultValue: [],
@@ -167,6 +168,7 @@ export default function Search({
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
           homeButtonDisplay={homeButtonDisplay}
+          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>

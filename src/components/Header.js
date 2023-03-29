@@ -15,6 +15,7 @@ export default function Header({
   goToHomePage,
   homeButtonDisplay,
   navigate,
+  favoritesButtonDisplay,
 }) {
   function changeQuery(e) {
     setQuery(e.target.value);
@@ -40,7 +41,15 @@ export default function Header({
         <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
       </button>
 
-      <button type="button" onClick={goToFavorites}>
+      <button
+        type="button"
+        onClick={goToFavorites}
+        style={
+          favoritesButtonDisplay === "on"
+            ? { display: "flex" }
+            : { display: "none" }
+        }
+      >
         Favorites
       </button>
       <form>
