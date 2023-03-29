@@ -41,18 +41,6 @@ export default function App() {
     defaultValue: "dark",
   });
 
-  const [homeButtonDisplay, setHomeButtonDisplay] = useLocalStorageState(
-    "homeButtonDisplay",
-    {
-      defaultValue: "",
-    }
-  );
-
-  const [favoritesButtonDisplay, setFavoritesButtonDisplay] =
-    useLocalStorageState("favoritesButtonDisplay", {
-      defaultValue: "",
-    });
-
   function toggleFavorite(work) {
     if (favorites.some((item) => item.id === work.id)) {
       const newFavorites = favorites.filter((item) => {
@@ -113,12 +101,8 @@ export default function App() {
             theme={theme}
             setTheme={setTheme}
             terms={terms}
-            homeButtonDisplay={homeButtonDisplay}
-            setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
-            favoritesButtonDisplay={favoritesButtonDisplay}
-            setFavoritesButtonDisplay={setFavoritesButtonDisplay}
           />
         }
       />
@@ -133,13 +117,9 @@ export default function App() {
             navigate={navigate}
             enterSearch={enterSearch}
             theme={theme}
-            setTheme={setTheme}
-            homeButtonDisplay={homeButtonDisplay}
-            setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}
-            favoritesButtonDisplay={favoritesButtonDisplay}
           />
         }
       />
@@ -158,12 +138,9 @@ export default function App() {
             setCurrentPage={setCurrentPage}
             theme={theme}
             setTheme={setTheme}
-            homeButtonDisplay={homeButtonDisplay}
-            setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             navigate={navigate}
-            favoritesButtonDisplay={favoritesButtonDisplay}
           />
         }
       />
@@ -171,8 +148,6 @@ export default function App() {
         path="/favorites"
         element={
           <Favorites
-            setHomeButtonDisplay={setHomeButtonDisplay}
-            homeButtonDisplay={homeButtonDisplay}
             setTheme={setTheme}
             theme={theme}
             navigate={navigate}
@@ -182,8 +157,6 @@ export default function App() {
             query={query}
             setQuery={setQuery}
             enterSearch={enterSearch}
-            favoritesButtonDisplay={favoritesButtonDisplay}
-            setFavoritesButtonDisplay={setFavoritesButtonDisplay}
           />
         }
       />

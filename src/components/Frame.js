@@ -7,9 +7,6 @@ import unfavorite from "./../images/unfavorite.png";
 import favorite from "./../images/favorite.png";
 
 export default function Frame({
-  homeButtonDisplay,
-  setHomeButtonDisplay,
-  favoritesButtonDisplay,
   terms,
 
   query,
@@ -48,8 +45,6 @@ export default function Frame({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
-          homeButtonDisplay={homeButtonDisplay}
-          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>

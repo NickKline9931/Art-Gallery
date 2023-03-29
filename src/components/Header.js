@@ -13,9 +13,7 @@ export default function Header({
   theme,
   setTheme,
   goToHomePage,
-  homeButtonDisplay,
   navigate,
-  favoritesButtonDisplay,
 }) {
   function changeQuery(e) {
     setQuery(e.target.value);
@@ -31,25 +29,11 @@ export default function Header({
 
   return (
     <div className="headerContainer">
-      <button
-        onClick={() => goToHomePage()}
-        className="homeButton"
-        style={
-          homeButtonDisplay === "on" ? { display: "flex" } : { display: "none" }
-        }
-      >
+      <button onClick={() => goToHomePage()} className="homeButton">
         <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
       </button>
 
-      <button
-        type="button"
-        onClick={goToFavorites}
-        style={
-          favoritesButtonDisplay === "on"
-            ? { display: "flex" }
-            : { display: "none" }
-        }
-      >
+      <button type="button" onClick={goToFavorites}>
         Favorites
       </button>
       <form>

@@ -16,23 +16,11 @@ export default function Favorites({
   query,
   setQuery,
   enterSearch,
-  favoritesButtonDisplay,
-  setFavoritesButtonDisplay,
 }) {
   useEffect(() => {
     document.body.className = "";
     document.body.classList.add(theme);
   }, [theme]);
-
-  useEffect(() => {
-    setFavoritesButtonDisplay("off");
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      setFavoritesButtonDisplay("on");
-    };
-  }, []);
 
   const favoritesDisplay = favorites.map((work, index) => {
     return (
@@ -65,14 +53,12 @@ export default function Favorites({
     <div className="favoritesContainer">
       <header>
         <Header
-          homeButtonDisplay={homeButtonDisplay}
           setTheme={setTheme}
           theme={theme}
           navigate={navigate}
           query={query}
           setQuery={setQuery}
           enterSearch={enterSearch}
-          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>

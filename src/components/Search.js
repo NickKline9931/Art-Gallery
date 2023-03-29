@@ -8,8 +8,6 @@ import favorite from "./../images/favorite.png";
 import Footer from "./Footer";
 
 export default function Search({
-  homeButtonDisplay,
-  setHomeButtonDisplay,
   query,
   setQuery,
   changeQuery,
@@ -28,7 +26,6 @@ export default function Search({
   setIconSrc,
   favorites,
   toggleFavorite,
-  favoritesButtonDisplay,
 }) {
   const [pages, setPages] = useLocalStorageState("pages", {
     defaultValue: [],
@@ -167,8 +164,6 @@ export default function Search({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
-          homeButtonDisplay={homeButtonDisplay}
-          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>

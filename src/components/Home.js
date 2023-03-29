@@ -6,8 +6,6 @@ import unfavorite from "./../images/unfavorite.png";
 import favorite from "./../images/favorite.png";
 
 export default function Home({
-  homeButtonDisplay,
-  setHomeButtonDisplay,
   navigate,
   setQuery,
   query,
@@ -19,24 +17,8 @@ export default function Home({
   setIconSrc,
   favorites,
   toggleFavorite,
-  favoritesButtonDisplay,
-  setFavoritesButtonDisplay,
 }) {
   const [newWorks, setNewWorks] = useState([]);
-
-  useEffect(() => {
-    setHomeButtonDisplay("off");
-  }, []);
-
-  useEffect(() => {
-    setFavoritesButtonDisplay("on");
-  });
-
-  useEffect(() => {
-    return () => {
-      setHomeButtonDisplay("on");
-    };
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -107,8 +89,6 @@ export default function Home({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
-          homeButtonDisplay={homeButtonDisplay}
-          favoritesButtonDisplay={favoritesButtonDisplay}
         />
       </header>
       <main>
