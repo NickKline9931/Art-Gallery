@@ -14,21 +14,14 @@ export default function App() {
     defaultValue: [],
   });
 
-  const [title, setTitle] = useLocalStorageState("title", {
-    defaultValue: "",
+  const [framedWork, setFramedWork] = useLocalStorageState("framedWork", {
+    defaultValue: {},
   });
-  const [artist, setArtist] = useLocalStorageState("artist", {
-    defaultValue: "",
-  });
-  const [date, setDate] = useLocalStorageState("date", {
-    defaultValue: "",
-  });
+
   const [terms, setTerms] = useLocalStorageState("terms", {
     defaultValue: [],
   });
-  const [imgUrl, setImgUrl] = useLocalStorageState("imgUrl", {
-    defaultValue: "",
-  });
+
   const [query, setQuery] = useLocalStorageState("query", {
     defaultValue: "",
   });
@@ -65,7 +58,6 @@ export default function App() {
       const newFavorites = [...favorites, work];
       setFavorites(newFavorites);
     }
-    console.log(work);
   }
 
   async function enterSearch() {
@@ -94,19 +86,10 @@ export default function App() {
   }
 
   function frameArtWork(work) {
-    const workTitle = work.title;
-    setTitle(workTitle);
-    const workArtist = work.artist_display;
-    setArtist(workArtist);
-    const workDate = work.date_display;
-    setDate(workDate);
     const workTerms = work.term_titles;
     setTerms(workTerms);
-    const imgUrl =
-      "https://www.artic.edu/iiif/2/" +
-      work.image_id +
-      "/full/843,/0/default.jpg";
-    setImgUrl(imgUrl);
+    setFramedWork(work);
+
     navigate("/frame");
   }
 
@@ -116,11 +99,7 @@ export default function App() {
         path="/"
         element={
           <Home
-            setTitle={setTitle}
-            setArtist={setArtist}
-            setDate={setDate}
             setTerms={setTerms}
-            setImgUrl={setImgUrl}
             query={query}
             setQuery={setQuery}
             navigate={navigate}
@@ -140,16 +119,8 @@ export default function App() {
         path="/frame"
         element={
           <Frame
-            setTitle={setTitle}
-            setArtist={setArtist}
-            setDate={setDate}
             setTerms={setTerms}
-            setImgUrl={setImgUrl}
-            title={title}
-            artist={artist}
-            date={date}
             terms={terms}
-            imgUrl={imgUrl}
             query={query}
             setQuery={setQuery}
             navigate={navigate}
@@ -160,6 +131,7 @@ export default function App() {
             setHomeButtonDisplay={setHomeButtonDisplay}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
+            framedWork={framedWork}
           />
         }
       />

@@ -3,15 +3,15 @@ import Header from "./Header";
 import Tags from "./Tags";
 import Footer from "./Footer";
 import "./../styles/Frame.css";
+import unfavorite from "./../images/unfavorite.png";
+import favorite from "./../images/favorite.png";
 
 export default function Frame({
   homeButtonDisplay,
   setHomeButtonDisplay,
-  title,
-  artist,
-  date,
+
   terms,
-  imgUrl,
+
   query,
   setQuery,
   changeQuery,
@@ -23,7 +23,8 @@ export default function Frame({
   iconSrc,
   setIconSrc,
   favorites,
-  toggleFavorites,
+  toggleFavorite,
+  framedWork,
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,10 +58,19 @@ export default function Frame({
       <main>
         <div className="sideBar">
           <div className="framedWorkInfo">
-            <h2 className="framedWorkTitle">{title}</h2>
+            <img
+              src={
+                favorites.some((item) => item.id === framedWork.id)
+                  ? favorite
+                  : unfavorite
+              }
+              alt="favorite"
+              onClick={() => toggleFavorite(framedWork)}
+            />
+            <h2 className="framedWorkTitle">{framedWork.title}</h2>
 
-            <h4>{artist}</h4>
-            <h5>{date}</h5>
+            <h4>{framedWork.artist_display}</h4>
+            <h5>{framedWork.date_display}</h5>
           </div>
           <div className="tagContainer">
             <Tags
@@ -72,7 +82,14 @@ export default function Frame({
           </div>
         </div>
         <div className="framedImage">
-          <img src={imgUrl} alt={title}></img>
+          <img
+            src={
+              "https://www.artic.edu/iiif/2/" +
+              framedWork.image_id +
+              "/full/843,/0/default.jpg"
+            }
+            alt={framedWork.title}
+          />
         </div>
       </main>
       <footer>
