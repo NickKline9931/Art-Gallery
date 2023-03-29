@@ -72,4 +72,5 @@ li {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: end;
   column-gap: 50px;
+  margin: auto;
 }

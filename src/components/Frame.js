@@ -31,10 +31,6 @@ export default function Frame({
   }, []);
 
   useEffect(() => {
-    setHomeButtonDisplay("on");
-  }, []);
-
-  useEffect(() => {
     document.body.className = "";
     document.body.classList.add(theme);
   }, [theme]);

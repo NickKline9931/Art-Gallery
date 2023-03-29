@@ -27,6 +27,12 @@ export default function Home({
   }, []);
 
   useEffect(() => {
+    return () => {
+      setHomeButtonDisplay("on");
+    };
+  }, []);
+
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

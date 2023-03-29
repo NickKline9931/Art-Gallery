@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./Header";
 import unfavorite from "./../images/unfavorite.png";
 import favorite from "./../images/favorite.png";
+import "./../styles/Favorites.css";
 
 export default function Favorites({
   setHomeButtonDisplay,
@@ -16,10 +17,6 @@ export default function Favorites({
   setQuery,
   enterSearch,
 }) {
-  useEffect(() => {
-    setHomeButtonDisplay("on");
-  }, []);
-
   useEffect(() => {
     document.body.className = "";
     document.body.classList.add(theme);
@@ -53,7 +50,7 @@ export default function Favorites({
   });
 
   return (
-    <div>
+    <div className="favoritesContainer">
       <header>
         <Header
           homeButtonDisplay={homeButtonDisplay}

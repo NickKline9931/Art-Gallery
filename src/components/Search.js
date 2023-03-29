@@ -34,10 +34,6 @@ export default function Search({
   });
 
   useEffect(() => {
-    setHomeButtonDisplay("on");
-  }, []);
-
-  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 

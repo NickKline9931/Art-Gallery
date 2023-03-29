@@ -1,0 +1,19 @@
+.favoritesContainer {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.favoritesContainer > * {
+  margin: auto;
+}
+
+.favoritesContainer > main {
+  display: flex;
+  flex-direction: column;
+}
+
+.favoritesContainer > main > h1 {
+  margin: auto;
+  margin-bottom: 30px;
+}
