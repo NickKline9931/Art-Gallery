@@ -7,10 +7,20 @@ export default function Favorites({
   setTheme,
   theme,
   navigate,
+  favorites,
+  toggleFavorites,
 }) {
   useEffect(() => {
     setHomeButtonDisplay("on");
   }, []);
+
+  const favoritesDisplay = favorites.map((work, index) => {
+    return (
+      <li key={index}>
+        <h2>{work.title}</h2>
+      </li>
+    );
+  });
 
   return (
     <div>
@@ -24,6 +34,7 @@ export default function Favorites({
       </header>
       <main>
         <h1>Favorites</h1>
+        <ul>{favoritesDisplay}</ul>
       </main>
     </div>
   );

@@ -22,6 +22,8 @@ export default function Frame({
   setTheme,
   iconSrc,
   setIconSrc,
+  favorites,
+  toggleFavorites,
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);

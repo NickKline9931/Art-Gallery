@@ -24,6 +24,8 @@ export default function Search({
   setTheme,
   iconSrc,
   setIconSrc,
+  favorites,
+  toggleFavorites,
 }) {
   const [pages, setPages] = useLocalStorageState("pages", {
     defaultValue: [],

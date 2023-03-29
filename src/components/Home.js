@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import "./../styles/Home.css";
 import Footer from "./Footer";
+import unfavorite from "./../images/unfavorite.png";
+import favorite from "./../images/favorite.png";
 
 export default function Home({
   homeButtonDisplay,
@@ -15,6 +17,8 @@ export default function Home({
   setTheme,
   iconSrc,
   setIconSrc,
+  favorites,
+  toggleFavorite,
 }) {
   const [newWorks, setNewWorks] = useState([]);
 
@@ -54,7 +58,16 @@ export default function Home({
 
   const newDisplay = newWorks.map((work, index) => {
     return (
-      <li key={index} onClick={() => frameArtWork(work)} className="thumbNails">
+      <li key={index} className="thumbNails">
+        <img
+          src={
+            favorites.some((item) => item.id === work.id)
+              ? favorite
+              : unfavorite
+          }
+          alt="favorite"
+          onClick={() => toggleFavorite(work)}
+        />
         <img
           src={
             "https://www.artic.edu/iiif/2/" +
@@ -62,6 +75,7 @@ export default function Home({
             "/full/843,/0/default.jpg"
           }
           alt={work.title}
+          onClick={() => frameArtWork(work)}
         />
         <h4 className="thumbNailTitles">{work.title}</h4>
         <h5>{work.artist_display}</h5>

@@ -10,6 +10,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
+  const [favorites, setFavorites] = useLocalStorageState("favorites", {
+    defaultValue: [],
+  });
+
   const [title, setTitle] = useLocalStorageState("title", {
     defaultValue: "",
   });
@@ -50,6 +54,19 @@ export default function App() {
       defaultValue: "",
     }
   );
+
+  function toggleFavorite(work) {
+    if (favorites.some((item) => item.id === work.id)) {
+      const newFavorites = favorites.filter((item) => {
+        return item.id !== work.id;
+      });
+      setFavorites(newFavorites);
+    } else {
+      const newFavorites = [...favorites, work];
+      setFavorites(newFavorites);
+    }
+    console.log(work);
+  }
 
   async function enterSearch() {
     setCurrentPage(1);
@@ -114,6 +131,8 @@ export default function App() {
             terms={terms}
             homeButtonDisplay={homeButtonDisplay}
             setHomeButtonDisplay={setHomeButtonDisplay}
+            favorites={favorites}
+            toggleFavorite={toggleFavorite}
           />
         }
       />
@@ -139,6 +158,8 @@ export default function App() {
             setTheme={setTheme}
             homeButtonDisplay={homeButtonDisplay}
             setHomeButtonDisplay={setHomeButtonDisplay}
+            favorites={favorites}
+            toggleFavorite={toggleFavorite}
           />
         }
       />
@@ -159,6 +180,8 @@ export default function App() {
             setTheme={setTheme}
             homeButtonDisplay={homeButtonDisplay}
             setHomeButtonDisplay={setHomeButtonDisplay}
+            favorites={favorites}
+            toggleFavorite={toggleFavorite}
           />
         }
       />
@@ -171,6 +194,8 @@ export default function App() {
             setTheme={setTheme}
             theme={theme}
             navigate={navigate}
+            favorites={favorites}
+            toggleFavorite={toggleFavorite}
           />
         }
       />
