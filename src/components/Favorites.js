@@ -96,7 +96,7 @@ export default function Favorites({
   }
 
   function fixCurrentPage() {
-    if (currentFavPage > favoritesPages.length - 1) {
+    if (currentFavPage >= favoritesPages.length) {
       setCurrentFavPage(favoritesPages.length);
     }
   }
@@ -174,7 +174,14 @@ export default function Favorites({
         <h1>Favorites({favorites.length})</h1>
         <h4>Page {currentFavPage}</h4>
         <ul className="worksList">{favoritesDisplay}</ul>
-        <div className="pageNavBar">
+        <div
+          className="pageNavBar"
+          style={
+            favoritesPages.length === 1
+              ? { display: "none" }
+              : { display: "flex" }
+          }
+        >
           <button onClick={goToFirstFavPage} className="arrowButton">
             &lt;&lt;
           </button>
