@@ -46,6 +46,10 @@ export default function Favorites({
     getFavoritesPages();
   }, [favorites]);
 
+  useEffect(() => {
+    getFavDisplay();
+  }, [currentFavPage]);
+
   function getFavoritesPages() {
     if (favorites.length > 15) {
       const createPages = [];
@@ -57,11 +61,14 @@ export default function Favorites({
     } else {
       setFavoritesPages([1]);
     }
-    getFavDisplay();
   }
 
   function goToPage(page) {
     setCurrentFavPage(page);
+    window.scrollTo({
+      top: 0,
+      behavior: "instant",
+    });
   }
 
   function goToFirstFavPage() {
@@ -77,13 +84,10 @@ export default function Favorites({
       setCurrentFavDisplay(favorites);
     } else {
       if (currentFavPage === 1) {
-        const getDisplay = favorites.slice(0, 14);
+        const getDisplay = favorites.slice(0, 15);
         setCurrentFavDisplay(getDisplay);
       } else {
-        const getDisplay = favorites.slice(
-          15 * currentFavPage,
-          29 * currentFavPage
-        );
+        const getDisplay = favorites.slice(15 * (currentFavPage - 1));
         setCurrentFavDisplay(getDisplay);
       }
     }
@@ -158,7 +162,8 @@ export default function Favorites({
         />
       </header>
       <main>
-        <h1>Favorites</h1>
+        <h1>Favorites({favorites.length})</h1>
+        <h4>Page {currentFavPage}</h4>
         <ul className="worksList">{favoritesDisplay}</ul>
         <div className="pageNavBar">
           <button onClick={goToFirstFavPage} className="arrowButton">
