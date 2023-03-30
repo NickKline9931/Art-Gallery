@@ -45,6 +45,10 @@ export default function Favorites({
     getFavDisplay();
   }, [currentFavPage]);
 
+  useEffect(() => {
+    fixCurrentPage();
+  }, [favoritesPages]);
+
   function getFavoritesPages() {
     if (favorites.length > 15) {
       const createPages = [];
@@ -88,6 +92,12 @@ export default function Favorites({
         );
         setCurrentFavDisplay(getDisplay);
       }
+    }
+  }
+
+  function fixCurrentPage() {
+    if (currentFavPage > favoritesPages.length - 1) {
+      setCurrentFavPage(favoritesPages.length);
     }
   }
 
