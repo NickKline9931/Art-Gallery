@@ -17,6 +17,7 @@ export default function Home({
   setIconSrc,
   favorites,
   toggleFavorite,
+  setCurrentFavPage,
 }) {
   const [newWorks, setNewWorks] = useState([]);
 
@@ -89,6 +90,7 @@ export default function Home({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
+          setCurrentFavPage={setCurrentFavPage}
         />
       </header>
       <main>

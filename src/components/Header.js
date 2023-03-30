@@ -13,7 +13,7 @@ export default function Header({
   setQuery,
   theme,
   setTheme,
-
+  setCurrentFavPage,
   navigate,
 }) {
   function changeQuery(e) {
@@ -25,6 +25,7 @@ export default function Header({
   }
 
   function goToFavorites() {
+    setCurrentFavPage(1);
     navigate("/favorites");
   }
 

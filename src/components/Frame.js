@@ -22,6 +22,7 @@ export default function Frame({
   favorites,
   toggleFavorite,
   framedWork,
+  setCurrentFavPage,
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,6 +46,7 @@ export default function Frame({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
+          setCurrentFavPage={setCurrentFavPage}
         />
       </header>
       <main>

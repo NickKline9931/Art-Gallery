@@ -15,18 +15,13 @@ export default function Favorites({
   query,
   setQuery,
   enterSearch,
+  currentFavPage,
+  setCurrentFavPage,
 }) {
   const [favoritesPages, setFavoritesPages] = useLocalStorageState(
     "favoritesPages",
     {
       defaultValue: [1],
-    }
-  );
-
-  const [currentFavPage, setCurrentFavPage] = useLocalStorageState(
-    "currentFavPage",
-    {
-      defaultValue: 1,
     }
   );
 
@@ -89,7 +84,7 @@ export default function Favorites({
       } else {
         const getDisplay = favorites.slice(
           15 * (currentFavPage - 1),
-          15 * (currentFavPage - 1) + 14
+          15 * (currentFavPage - 1) + 15
         );
         setCurrentFavDisplay(getDisplay);
       }
@@ -162,6 +157,7 @@ export default function Favorites({
           query={query}
           setQuery={setQuery}
           enterSearch={enterSearch}
+          setCurrentFavPage={setCurrentFavPage}
         />
       </header>
       <main>

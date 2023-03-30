@@ -14,6 +14,13 @@ export default function App() {
     defaultValue: [],
   });
 
+  const [currentFavPage, setCurrentFavPage] = useLocalStorageState(
+    "currentFavPage",
+    {
+      defaultValue: 1,
+    }
+  );
+
   const [framedWork, setFramedWork] = useLocalStorageState("framedWork", {
     defaultValue: {},
   });
@@ -103,6 +110,8 @@ export default function App() {
             terms={terms}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
+            setCurrentFavPage={setCurrentFavPage}
+            currentFavPage={currentFavPage}
           />
         }
       />
@@ -121,6 +130,7 @@ export default function App() {
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}
+            setCurrentFavPage={setCurrentFavPage}
           />
         }
       />
@@ -142,6 +152,7 @@ export default function App() {
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             navigate={navigate}
+            setCurrentFavPage={setCurrentFavPage}
           />
         }
       />
@@ -158,6 +169,8 @@ export default function App() {
             query={query}
             setQuery={setQuery}
             enterSearch={enterSearch}
+            currentFavPage={currentFavPage}
+            setCurrentFavPage={setCurrentFavPage}
           />
         }
       />

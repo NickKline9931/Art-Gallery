@@ -14,7 +14,7 @@ export default function Search({
   searchResults,
   setSearchResults,
   enterSearch,
-
+  setCurrentFavPage,
   navigate,
   frameArtWork,
   totalPages,
@@ -164,6 +164,7 @@ export default function Search({
           setTheme={setTheme}
           iconSrc={iconSrc}
           setIconSrc={setIconSrc}
+          setCurrentFavPage={setCurrentFavPage}
         />
       </header>
       <main>
