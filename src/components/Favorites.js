@@ -87,7 +87,10 @@ export default function Favorites({
         const getDisplay = favorites.slice(0, 15);
         setCurrentFavDisplay(getDisplay);
       } else {
-        const getDisplay = favorites.slice(15 * (currentFavPage - 1));
+        const getDisplay = favorites.slice(
+          15 * (currentFavPage - 1),
+          15 * (currentFavPage - 1) + 14
+        );
         setCurrentFavDisplay(getDisplay);
       }
     }
