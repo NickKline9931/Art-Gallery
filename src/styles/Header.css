@@ -1,6 +1,5 @@
 .headerContainer {
   display: flex;
-  align-items: center;
 }
 
 .headerContainer > * {
@@ -33,4 +32,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.favoritesButton {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+
+.favoritesButton > img {
+  width: 16px;
+  height: auto;
+}
+
+.navigationButtons {
+  display: flex;
 }

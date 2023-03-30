@@ -117,6 +117,7 @@ export default function App() {
             navigate={navigate}
             enterSearch={enterSearch}
             theme={theme}
+            setTheme={setTheme}
             favorites={favorites}
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}

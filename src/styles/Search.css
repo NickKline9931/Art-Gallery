@@ -8,6 +8,19 @@
   flex-direction: column;
 }
 
+.searchContainer > header > * {
+  margin: auto;
+}
+
+.searchContainer > main {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchContainer > main > * {
+  margin: auto;
+}
+
 .pageButton {
   border: none;
   background: none;

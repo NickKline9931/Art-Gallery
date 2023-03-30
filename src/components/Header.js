@@ -5,6 +5,7 @@ import lightSearch from "./../images/lightsearch.png";
 import whitehome from "./../images/whitehome.png";
 import blackhome from "./../images/blackhome.png";
 import ThemeIcon from "./ThemeIcon";
+import favorite from "./../images/favorite.png";
 
 export default function Header({
   query,
@@ -12,7 +13,7 @@ export default function Header({
   setQuery,
   theme,
   setTheme,
-  goToHomePage,
+
   navigate,
 }) {
   function changeQuery(e) {
@@ -29,13 +30,22 @@ export default function Header({
 
   return (
     <div className="headerContainer">
-      <button onClick={() => goToHomePage()} className="homeButton">
-        <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
-      </button>
+      <div className="navigationButtons">
+        <ThemeIcon theme={theme} setTheme={setTheme} />
+        <button onClick={() => goToHomePage()} className="homeButton">
+          <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
+        </button>
 
-      <button type="button" onClick={goToFavorites}>
-        Favorites
-      </button>
+        <button
+          type="button"
+          onClick={goToFavorites}
+          className="favoritesButton"
+          style={theme === "dark" ? { color: "white" } : { color: "black" }}
+        >
+          <img src={favorite} alt="f" />
+          Favorites
+        </button>
+      </div>
       <form>
         <input
           type="text"
@@ -51,7 +61,6 @@ export default function Header({
         >
           <img src={theme === "light" ? lightSearch : darkSearch} />
         </button>
-        <ThemeIcon theme={theme} setTheme={setTheme} />
       </form>
     </div>
   );
