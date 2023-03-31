@@ -65,12 +65,15 @@ li {
 }
 
 .worksList {
-  width: 100%;
-  height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: end;
   column-gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.worksList > * {
   margin: auto;
 }

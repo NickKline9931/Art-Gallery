@@ -171,10 +171,8 @@ export default function Search({
         <h1>
           Page {currentPage} of {totalPages}
         </h1>
-        <h4>Results</h4>
-        <ul className="worksList" id="searchResults">
-          {searchResultsDisplay}
-        </ul>
+        <h4>Results for {query}</h4>
+        <ul className="searchResults">{searchResultsDisplay}</ul>
         <div className="pageNavBar">
           <button onClick={goToFirstPage} className="arrowButton">
             &lt;&lt;

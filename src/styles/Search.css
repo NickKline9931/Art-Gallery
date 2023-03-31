@@ -8,17 +8,15 @@
   flex-direction: column;
 }
 
-.searchContainer > header > * {
-  margin: auto;
-}
-
 .searchContainer > main {
   display: flex;
   flex-direction: column;
 }
 
 .searchContainer > main > * {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .pageButton {
@@ -43,4 +41,15 @@
 .homeButton {
   border: none;
   background: none;
+}
+
+.searchResults {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  align-items: start;
+  height: 2400px;
+  margin-bottom: 50px;
+  column-gap: 30px;
+  row-gap: 20px;
 }
