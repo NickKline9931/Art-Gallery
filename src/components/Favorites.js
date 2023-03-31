@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import Header from "./Header";
+import Footer from "./Footer";
 import unfavorite from "./../images/unfavorite.png";
 import favorite from "./../images/favorite.png";
 import "./../styles/Favorites.css";
@@ -173,7 +174,9 @@ export default function Favorites({
       <main>
         <h1>Favorites({favorites.length})</h1>
         <h4>Page {currentFavPage}</h4>
-        <ul className="worksList">{favoritesDisplay}</ul>
+        <ul className="worksList" id="favoriteWorks">
+          {favoritesDisplay}
+        </ul>
         <div
           className="pageNavBar"
           style={
@@ -191,6 +194,9 @@ export default function Favorites({
           </button>
         </div>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

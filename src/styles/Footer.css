@@ -1,0 +1,6 @@
+#footerContainer {
+  box-sizing: border-box;
+  display: flex;
+  padding-top: 7px;
+  height: 40px;
+}

@@ -11,6 +11,7 @@
 .favoritesContainer > main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .favoritesContainer > main > h1 {
@@ -20,4 +21,8 @@
 
 .favoritesContainer > main > * {
   margin: auto;
+}
+
+#favoriteWorks {
+  margin-bottom: 30px;
 }

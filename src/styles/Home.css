@@ -58,20 +58,25 @@ li {
 .homeContainer > main {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .homeContainer > main > * {
   margin: auto;
 }
 
+.homeContainer > main > h1 {
+  margin-bottom: 30px;
+}
+
 .worksList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  align-items: end;
-  column-gap: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: start;
+  height: 2400px;
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .worksList > * {
