@@ -3,4 +3,9 @@
   display: flex;
   padding-top: 7px;
   height: 40px;
+  font-family: serif;
+}
+
+#footerContainer > * {
+  font-family: serif;
 }

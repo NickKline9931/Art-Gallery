@@ -2,6 +2,10 @@
   display: flex;
 }
 
+input {
+  font-family: serif;
+}
+
 .headerContainer > * {
   margin: auto;
 }
@@ -39,10 +43,11 @@
   border: none;
   display: flex;
   align-items: center;
+  font-size: 18px;
 }
 
 .favoritesButton > img {
-  width: 16px;
+  width: 20px;
   height: auto;
 }
 

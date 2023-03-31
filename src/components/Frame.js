@@ -8,17 +8,13 @@ import favorite from "./../images/favorite.png";
 
 export default function Frame({
   terms,
-
   query,
   setQuery,
   changeQuery,
   navigate,
   enterSearch,
-
   theme,
   setTheme,
-  iconSrc,
-  setIconSrc,
   favorites,
   toggleFavorite,
   framedWork,
@@ -44,8 +40,6 @@ export default function Frame({
           navigate={navigate}
           theme={theme}
           setTheme={setTheme}
-          iconSrc={iconSrc}
-          setIconSrc={setIconSrc}
           setCurrentFavPage={setCurrentFavPage}
         />
       </header>

@@ -31,22 +31,21 @@ export default function Header({
 
   return (
     <div className="headerContainer">
-      <div className="navigationButtons">
-        <ThemeIcon theme={theme} setTheme={setTheme} />
-        <button onClick={() => goToHomePage()} className="homeButton">
-          <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
-        </button>
+      <ThemeIcon theme={theme} setTheme={setTheme} />
+      <button onClick={() => goToHomePage()} className="homeButton">
+        <img src={theme === "dark" ? whitehome : blackhome} alt="home" />
+      </button>
 
-        <button
-          type="button"
-          onClick={goToFavorites}
-          className="favoritesButton"
-          style={theme === "dark" ? { color: "white" } : { color: "black" }}
-        >
-          <img src={favorite} alt="f" />
-          Favorites
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={goToFavorites}
+        className="favoritesButton"
+        style={theme === "dark" ? { color: "white" } : { color: "black" }}
+      >
+        <img src={favorite} alt="f" />
+        Favorites
+      </button>
+
       <form>
         <input
           type="text"

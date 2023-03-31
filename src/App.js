@@ -10,6 +10,14 @@ import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
+
+  const [currentSearchTerm, setCurrentSearchTerm] = useLocalStorageState(
+    "currentSearchTerm",
+    {
+      defaultValue: "",
+    }
+  );
+
   const [favorites, setFavorites] = useLocalStorageState("favorites", {
     defaultValue: [],
   });
@@ -62,6 +70,7 @@ export default function App() {
 
   async function enterSearch() {
     setCurrentPage(1);
+    setCurrentSearchTerm(query);
     const data = await fetch(
       "https://api.artic.edu/api/v1/artworks/search?q=" +
         query +
@@ -153,6 +162,7 @@ export default function App() {
             toggleFavorite={toggleFavorite}
             navigate={navigate}
             setCurrentFavPage={setCurrentFavPage}
+            currentSearchTerm={currentSearchTerm}
           />
         }
       />

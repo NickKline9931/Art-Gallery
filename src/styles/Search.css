@@ -1,5 +1,6 @@
 .searchContainer > * {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .searchContainer {
@@ -11,12 +12,18 @@
 .searchContainer > main {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .searchContainer > main > * {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.searchContainer > main > h4 {
+  position: relative;
+  bottom: 30px;
 }
 
 .pageButton {
@@ -49,7 +56,8 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
   height: 2400px;
-  margin-bottom: 50px;
-  column-gap: 30px;
+  column-gap: 90px;
   row-gap: 20px;
+  position: relative;
+  bottom: 70px;
 }

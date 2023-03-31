@@ -22,8 +22,7 @@ export default function Search({
   setCurrentPage,
   theme,
   setTheme,
-  iconSrc,
-  setIconSrc,
+  currentSearchTerm,
   favorites,
   toggleFavorite,
 }) {
@@ -162,8 +161,6 @@ export default function Search({
           navigate={navigate}
           theme={theme}
           setTheme={setTheme}
-          iconSrc={iconSrc}
-          setIconSrc={setIconSrc}
           setCurrentFavPage={setCurrentFavPage}
         />
       </header>
@@ -171,7 +168,7 @@ export default function Search({
         <h1>
           Page {currentPage} of {totalPages}
         </h1>
-        <h4>Results for {query}</h4>
+        <h4>Results for {currentSearchTerm}</h4>
         <ul className="searchResults">{searchResultsDisplay}</ul>
         <div className="pageNavBar">
           <button onClick={goToFirstPage} className="arrowButton">

@@ -94,7 +94,9 @@ export default function Home({
         />
       </header>
       <main>
-        <h1 data-testid="lastUpdated">Last Updated</h1>
+        <h1 data-testid="lastUpdated">
+          <span>Last Updated</span>
+        </h1>
         <ul className="worksList">{newDisplay}</ul>
       </main>
       <footer>
