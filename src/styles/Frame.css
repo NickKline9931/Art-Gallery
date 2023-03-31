@@ -50,16 +50,60 @@
   text-align: center;
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0.2;
+    right: 10px;
+  }
+
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+
+.framedWorkText {
+  margin: auto;
+  animation-duration: 2s;
+  animation-name: fade-in;
+  animation-iteration-count: 1;
+  position: relative;
+}
+
+.framedWorkText > * {
+  margin: auto;
+  text-align: center;
+}
+
 .framedWorkTitle {
   margin: auto;
   text-align: center;
   overflow-wrap: normal;
 }
 
+@keyframes float-up {
+  from {
+    opacity: 0.2;
+    top: 30px;
+  }
+
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
 .tagContainer {
   display: flex;
   flex-wrap: wrap;
   max-width: 120%;
+  animation-duration: 2s;
+  animation-name: float-up;
+  animation-iteration-count: 1;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+  position: relative;
+  opacity: 0;
 }
 
 .framedImage > * {

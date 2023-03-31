@@ -61,10 +61,12 @@ export default function Frame({
               alt="favorite"
               onClick={() => toggleFavorite(framedWork)}
             />
-            <h2 className="framedWorkTitle">{framedWork.title}</h2>
+            <div className="framedWorkText">
+              <h2 className="framedWorkTitle">{framedWork.title}</h2>
 
-            <h4>{framedWork.artist_display}</h4>
-            <h5>{framedWork.date_display}</h5>
+              <h4>{framedWork.artist_display}</h4>
+              <h5>{framedWork.date_display}</h5>
+            </div>
           </div>
           <div className="tagContainer">
             <Tags
