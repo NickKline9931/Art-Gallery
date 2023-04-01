@@ -91,3 +91,10 @@ li {
 .worksList > * {
   margin: auto;
 }
+
+@media (max-width: 1100px) {
+  .worksList {
+    display: flex;
+    flex-direction: column;
+  }
+}
