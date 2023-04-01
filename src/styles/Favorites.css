@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Merriweather:ital,wght@1,300;1,400&family=Roboto+Slab:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Merriweather", "Roboto Slab", "Alkatra", cursive;
+}
+
 .favoritesContainer {
   margin: auto;
   display: flex;
@@ -6,6 +15,10 @@
 
 .favoritesContainer > * {
   margin: auto;
+}
+
+.favoritesContainer > header {
+  margin-bottom: 20px;
 }
 
 .favoritesContainer > main {
@@ -21,6 +34,11 @@
 
 .favoritesContainer > main > * {
   margin: auto;
+}
+
+.favoritesContainer > main > h3 {
+  position: relative;
+  bottom: 20px;
 }
 
 #favoriteWorks {

@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Merriweather:ital,wght@1,300;1,400&family=Roboto+Slab:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Merriweather", "Roboto Slab", "Alkatra", cursive;
+}
+
 .frameContainer {
   position: relative;
   display: flex;
@@ -100,9 +109,10 @@
   animation-duration: 2s;
   animation-name: float-up;
   animation-iteration-count: 1;
-  animation-delay: 1.5s;
+  animation-delay: 1.2s;
   animation-fill-mode: forwards;
   position: relative;
+  left: 8px;
   opacity: 0;
 }
 

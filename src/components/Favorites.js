@@ -173,7 +173,9 @@ export default function Favorites({
       </header>
       <main>
         <h1>Favorites({favorites.length})</h1>
-        <h4>Page {currentFavPage}</h4>
+        <h3>
+          Page {currentFavPage} of {favoritesPages.length}
+        </h3>
         <ul className="worksList" id="favoriteWorks">
           {favoritesDisplay}
         </ul>
