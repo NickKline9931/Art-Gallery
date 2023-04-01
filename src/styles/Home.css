@@ -98,4 +98,9 @@ li {
     flex-direction: column;
     height: auto;
   }
+
+  * {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
