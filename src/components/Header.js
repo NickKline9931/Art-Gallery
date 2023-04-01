@@ -46,22 +46,20 @@ export default function Header({
         Favorites
       </button>
 
-      <form>
-        <input
-          type="text"
-          value={query}
-          onChange={changeQuery}
-          id="searchBox"
-        ></input>
-        <button
-          type="button"
-          onClick={() => enterSearch()}
-          data-testid="searchButton"
-          className="searchButton"
-        >
-          <img src={theme === "light" ? lightSearch : darkSearch} />
-        </button>
-      </form>
+      <input
+        type="text"
+        value={query}
+        onChange={changeQuery}
+        id="searchBox"
+      ></input>
+      <button
+        type="button"
+        onClick={() => enterSearch()}
+        data-testid="searchButton"
+        className="searchButton"
+      >
+        <img src={theme === "light" ? lightSearch : darkSearch} />
+      </button>
     </div>
   );
 }
