@@ -119,3 +119,40 @@
 .framedImage > * {
   width: 100%;
 }
+
+@media (max-width: 1100px) {
+  .sideBar {
+    max-width: 20%;
+    padding-top: 0;
+  }
+
+  .framedImage {
+    max-width: 60%;
+  }
+
+  .frameContainer > body {
+    margin-right: 10px;
+  }
+
+  .tagContainer {
+    height: auto;
+    width: 300px;
+    position: relative;
+  }
+
+  .tagContainer > * {
+    margin-bottom: 10px;
+    height: auto;
+  }
+
+  .framedWorkInfo {
+    position: relative;
+    left: 35px;
+  }
+
+  .frameContainer > footer {
+    position: absolute;
+    top: 900px;
+    left: 225px;
+  }
+}
