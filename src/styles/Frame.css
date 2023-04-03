@@ -135,14 +135,12 @@
   }
 
   .tagContainer {
-    height: auto;
     width: 300px;
     position: relative;
   }
 
   .tagContainer > * {
     margin-bottom: 10px;
-    height: auto;
   }
 
   .framedWorkInfo {
@@ -153,6 +151,6 @@
   .frameContainer > footer {
     position: absolute;
     top: 900px;
-    left: 225px;
+    left: 275px;
   }
 }

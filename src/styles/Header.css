@@ -7,6 +7,9 @@
 
 input {
   font-family: serif;
+  height: 24px;
+  width: 140px;
+  font-size: 16px;
 }
 
 .headerContainer > * {
@@ -56,5 +59,17 @@ input {
   .searchButton > img {
     width: 700%;
     height: auto;
+  }
+
+  input {
+    font-size: 14px;
+    width: 100px;
+    height: 18px;
+  }
+}
+
+@media (min-width: 1150px) {
+  input {
+    border-radius: 11%;
   }
 }
