@@ -44,3 +44,10 @@
 #favoriteWorks {
   margin-bottom: 30px;
 }
+
+@media (max-width: 1100px) {
+  #favoriteWorks {
+    position: relative;
+    right: 20px;
+  }
+}
