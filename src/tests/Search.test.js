@@ -19,7 +19,12 @@ describe("search component", () => {
         title: "three",
       },
     ];
-    render(<Search searchResults={testSearch} />);
+    const favorites = [
+      {
+        title: "one",
+      },
+    ];
+    render(<Search searchResults={testSearch} favorites={favorites} />);
     expect(screen.getByRole("list"));
   });
 });

@@ -5,8 +5,8 @@ import Tags from "./../components/Tags";
 
 describe("Tags component", () => {
   it("renders tags", () => {
-    const terms = ["term1", "term2"];
+    const terms = ["term1"];
     render(<Tags terms={terms} />);
-    expect(screen.getByRole("list"));
+    expect(screen.getByRole("button"));
   });
 });

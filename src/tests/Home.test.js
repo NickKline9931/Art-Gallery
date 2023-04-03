@@ -3,6 +3,12 @@ import Home from "./../components/Home";
 import { render, screen } from "@testing-library/react";
 
 describe("Home component", () => {
+  window.scrollTo = jest.fn();
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   it("renders correct heading", () => {
     render(<Home />);
     const heading = screen.getByTestId("lastUpdated");

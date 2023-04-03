@@ -58,8 +58,8 @@ export default function Frame({
             <div className="framedWorkText">
               <h2 className="framedWorkTitle">{framedWork.title}</h2>
 
-              <h4>{framedWork.artist_display}</h4>
-              <h5>{framedWork.date_display}</h5>
+              <h4 className="framedWorkArtist">{framedWork.artist_display}</h4>
+              <h5 className="framedWorkDate">{framedWork.date_display}</h5>
             </div>
           </div>
           <div className="tagContainer">
