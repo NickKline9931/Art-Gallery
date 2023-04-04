@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Art-Gallery/static/css/main.974e49bc.css",
+    "main.css": "/Art-Gallery/static/css/main.6f26e406.css",
     "main.js": "/Art-Gallery/static/js/main.7d3177cd.js",
     "index.html": "/Art-Gallery/index.html",
-    "main.974e49bc.css.map": "/Art-Gallery/static/css/main.974e49bc.css.map",
+    "main.6f26e406.css.map": "/Art-Gallery/static/css/main.6f26e406.css.map",
     "main.7d3177cd.js.map": "/Art-Gallery/static/js/main.7d3177cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.974e49bc.css",
+    "static/css/main.6f26e406.css",
     "static/js/main.7d3177cd.js"
   ]
 }
