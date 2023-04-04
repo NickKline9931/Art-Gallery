@@ -7,8 +7,6 @@
 
 input {
   font-family: serif;
-  height: 24px;
-  width: 140px;
   font-size: 16px;
 }
 
@@ -18,8 +16,8 @@ input {
 
 .searchButton {
   height: 25px;
-  width: 25px;
   background: none;
+  width: 25px;
   border: none;
   display: flex;
   align-items: center;
@@ -28,6 +26,7 @@ input {
 
 .searchButton > img {
   width: 150%;
+  max-width: 150%;
   height: auto;
 }
 
@@ -66,10 +65,15 @@ input {
     width: 100px;
     height: 18px;
   }
+
+  .searchButton {
+    height: 35px;
+    width: 35px;
+  }
 }
 
-@media (min-width: 1150px) {
+@media (max-width: 700px) and (orientation: portrait) {
   input {
-    border-radius: 11%;
+    width: 40px;
   }
 }
