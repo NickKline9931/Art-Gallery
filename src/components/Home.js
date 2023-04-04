@@ -25,7 +25,16 @@ export default function Home({
     window.scrollTo(0, 0);
   }, []);
 
-  const fetchData = async () => {
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(theme);
+  }, [theme]);
+
+  async function fetchData() {
     const response = await fetch(
       "https://api.artic.edu/api/v1/artworks?fields=id,artist_display,title,date_display,image_id,term_titles&query[term][is_public_domain]=true&limit=12",
       {
@@ -40,16 +49,7 @@ export default function Home({
       return item.image_id !== null;
     });
     setNewWorks(filteredData);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    document.body.className = "";
-    document.body.classList.add(theme);
-  }, [theme]);
+  }
 
   const newDisplay = newWorks.map((work, index) => {
     return (

@@ -34,6 +34,21 @@ export default function Search({
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    renderPageItems();
+  }, [currentPage]);
+
+  useEffect(() => {
+    document.body.className = "";
+    document.body.classList.add(theme);
+  }, [theme]);
+
+  useEffect(() => {
+    if (totalPages !== 0) {
+      getPages();
+    }
+  }, [totalPages]);
+
   function getPages() {
     const createPages = [];
 
@@ -69,15 +84,15 @@ export default function Search({
     });
   }
 
-  useEffect(() => {
-    renderPageItems();
-  }, [currentPage]);
+  function goToFirstPage() {
+    const firstPage = pages[0];
+    setCurrentPage(firstPage);
+  }
 
-  useEffect(() => {
-    if (totalPages !== 0) {
-      getPages();
-    }
-  }, [totalPages]);
+  function goToLastPage() {
+    const lastPage = pages[pages.length - 1];
+    setCurrentPage(lastPage);
+  }
 
   const searchResultsDisplay = searchResults.map((work, index) => {
     return (
@@ -136,20 +151,6 @@ export default function Search({
     );
   });
 
-  function goToFirstPage() {
-    const firstPage = pages[0];
-    setCurrentPage(firstPage);
-  }
-
-  function goToLastPage() {
-    const lastPage = pages[pages.length - 1];
-    setCurrentPage(lastPage);
-  }
-
-  useEffect(() => {
-    document.body.className = "";
-    document.body.classList.add(theme);
-  }, [theme]);
   return (
     <div className="searchContainer">
       <header>
