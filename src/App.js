@@ -140,6 +140,7 @@ export default function App() {
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}
             setCurrentFavPage={setCurrentFavPage}
+            setCurrentSearchTerm={setCurrentSearchTerm}
           />
         }
       />

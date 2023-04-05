@@ -19,6 +19,7 @@ export default function Frame({
   toggleFavorite,
   framedWork,
   setCurrentFavPage,
+  setCurrentSearchTerm,
 }) {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,6 +69,7 @@ export default function Frame({
               navigate={navigate}
               enterSearch={enterSearch}
               setQuery={setQuery}
+              setCurrentSearchTerm={setCurrentSearchTerm}
             />
           </div>
         </div>
