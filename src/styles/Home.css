@@ -83,8 +83,8 @@ li {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
-  height: 2400px;
-  row-gap: 40px;
+  row-gap: 20px;
+  column-gap: 10px;
   position: relative;
   right: 24px;
 }
@@ -97,7 +97,6 @@ li {
   .worksList {
     display: flex;
     flex-direction: column;
-    height: auto;
     position: relative;
     right: 27px;
   }

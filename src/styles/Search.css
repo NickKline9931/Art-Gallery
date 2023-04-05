@@ -74,12 +74,20 @@
   bottom: 70px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .searchResults {
     display: flex;
     flex-direction: column;
     height: auto;
     position: relative;
     right: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .worksList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
   }
 }
