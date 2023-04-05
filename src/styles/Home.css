@@ -86,6 +86,8 @@ li {
   height: 2400px;
   column-gap: 40px;
   row-gap: 40px;
+  position: relative;
+  right: 24px;
 }
 
 .worksList > * {
