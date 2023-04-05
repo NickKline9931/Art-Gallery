@@ -84,7 +84,6 @@ li {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
   height: 2400px;
-  column-gap: 40px;
   row-gap: 40px;
   position: relative;
   right: 24px;
@@ -94,7 +93,7 @@ li {
   margin: auto;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .worksList {
     display: flex;
     flex-direction: column;
