@@ -58,6 +58,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
   row-gap: 20px;
+  column-gap: 60px;
   position: relative;
   right: 24px;
 }

@@ -30,13 +30,12 @@
 }
 
 .searchContainer > main > h1 {
-  margin-bottom: 45px;
+  margin-bottom: 10px;
 }
 
 .searchContainer > main > h3 {
   position: relative;
-  bottom: 45px;
-  margin-bottom: 10px;
+  bottom: 25px;
 }
 
 .pageButton {
@@ -68,7 +67,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
-  column-gap: 20px;
+  column-gap: 90px;
   row-gap: 20px;
   position: relative;
   right: 20px;

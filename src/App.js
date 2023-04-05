@@ -94,6 +94,32 @@ export default function App() {
     navigate("/search");
   }
 
+  async function searchWithTag(tag) {
+    setQuery(tag);
+    setCurrentSearchTerm(tag);
+    const data = await fetch(
+      "https://api.artic.edu/api/v1/artworks/search?q=" +
+        query +
+        "&fields=title,artist_display,date_display,term_titles,image_id&query[term][is_public_domain]=true&page=1&limit=12",
+      {
+        headers: {
+          "AIC-User-Agent": "Art-Gallery (nickkline9931@gmail.com)",
+        },
+      }
+    );
+    const results = await data.json();
+    const resultItems = results.data;
+    setSearchResults(resultItems);
+    const pagination = results.pagination;
+    const pageTotal = pagination.total_pages;
+    if (pageTotal < 100) {
+      setTotalPages(pageTotal);
+    } else {
+      setTotalPages(100);
+    }
+    navigate("/search");
+  }
+
   function frameArtWork(work) {
     const workTerms = work.term_titles;
     setTerms(workTerms);
@@ -140,7 +166,7 @@ export default function App() {
             toggleFavorite={toggleFavorite}
             framedWork={framedWork}
             setCurrentFavPage={setCurrentFavPage}
-            setCurrentSearchTerm={setCurrentSearchTerm}
+            searchWithTag={searchWithTag}
           />
         }
       />

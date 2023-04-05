@@ -1,17 +1,7 @@
 import React from "react";
 import "./../styles/Tags.css";
 
-export default function Tags({
-  terms,
-  enterSearch,
-  setQuery,
-  setCurrentSearchTerm,
-}) {
-  function searchWithTag(tag) {
-    setQuery(tag);
-    setCurrentSearchTerm(tag);
-    enterSearch();
-  }
+export default function Tags({ terms, searchWithTag }) {
   const tags = terms.map((tag, index) => {
     return (
       <button className="tags" onClick={() => searchWithTag(tag)} key={index}>
