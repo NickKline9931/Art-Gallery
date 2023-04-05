@@ -107,3 +107,11 @@ li {
     margin-right: auto;
   }
 }
+
+@media (max-width: 1100px) {
+  .worksList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6, 1fr);
+  }
+}
