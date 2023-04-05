@@ -182,7 +182,7 @@ export default function Favorites({
         <div
           className="pageNavBar"
           style={
-            favoritesPages.length === 1
+            favoritesPages.length < 2
               ? { display: "none" }
               : { display: "flex" }
           }

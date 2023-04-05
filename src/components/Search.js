@@ -171,7 +171,10 @@ export default function Search({
         </h1>
         <h3>Results for {currentSearchTerm}</h3>
         <ul className="searchResults">{searchResultsDisplay}</ul>
-        <div className="pageNavBar">
+        <div
+          className="pageNavBar"
+          style={totalPages < 2 ? { display: "none" } : { display: "flex" }}
+        >
           <button onClick={goToFirstPage} className="arrowButton">
             &lt;&lt;
           </button>

@@ -36,6 +36,7 @@
 .searchContainer > main > h3 {
   position: relative;
   bottom: 45px;
+  margin-bottom: 10px;
 }
 
 .pageButton {
@@ -68,9 +69,10 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
   height: 2400px;
-  column-gap: 90px;
+  column-gap: 20px;
   row-gap: 20px;
   position: relative;
+  right: 20px;
   bottom: 70px;
 }
 
@@ -79,15 +81,15 @@
     display: flex;
     flex-direction: column;
     height: auto;
-    position: relative;
-    right: 20px;
   }
 }
 
 @media (max-width: 1100px) {
-  .worksList {
+  .searchResults {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    right: 20px;
   }
 }
