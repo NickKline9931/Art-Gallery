@@ -36,6 +36,33 @@
 .searchContainer > main > h3 {
   position: relative;
   bottom: 25px;
+  margin-bottom: 60px;
+}
+
+.thumbNails {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 400px;
+  justify-content: center;
+}
+
+.thumbNails > * {
+  margin: auto;
+  text-align: center;
+}
+
+.thumbNailImg {
+  max-height: 75%;
+  max-width: 90%;
+}
+
+.thumbNailTitles {
+  max-width: 100%;
+}
+
+.thumbNailArtists {
+  max-width: 90%;
 }
 
 .pageButton {

@@ -34,19 +34,27 @@ li {
 .thumbNails {
   display: flex;
   flex-direction: column;
-  max-width: 800px;
-  margin: auto;
-  justify-content: flex-end;
+  width: 350px;
+  height: 400px;
+  justify-content: center;
 }
 
 .thumbNails > * {
   margin: auto;
-  margin-bottom: 5px;
   text-align: center;
 }
 
-.thumbNails > img {
-  max-width: 300px;
+.thumbNailImg {
+  max-height: 75%;
+  max-width: 90%;
+}
+
+.thumbNailTitles {
+  max-width: 100%;
+}
+
+.thumbNailArtists {
+  max-width: 90%;
 }
 
 .homeContainer {
@@ -75,15 +83,16 @@ li {
 }
 
 .homeContainer > main > h1 {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .worksList {
+  height: auto;
+  width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  align-items: start;
-  row-gap: 20px;
+  row-gap: 80px;
   column-gap: 60px;
   position: relative;
   right: 24px;

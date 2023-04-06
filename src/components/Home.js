@@ -64,6 +64,7 @@ export default function Home({
           onClick={() => toggleFavorite(work)}
         />
         <img
+          className="thumbNailImg"
           src={
             "https://www.artic.edu/iiif/2/" +
             work.image_id +
@@ -73,7 +74,7 @@ export default function Home({
           onClick={() => frameArtWork(work)}
         />
         <h4 className="thumbNailTitles">{work.title}</h4>
-        <h5>{work.artist_display}</h5>
+        <h5 className="thumbNailArtists">{work.artist_display}</h5>
       </li>
     );
   });
