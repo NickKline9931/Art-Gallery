@@ -87,3 +87,9 @@
     right: 20px;
   }
 }
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .worksList {
+    column-gap: 90px;
+  }
+}

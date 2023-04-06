@@ -95,7 +95,7 @@
   grid-template-rows: 1fr 1fr 1fr 1fr;
   align-items: start;
   column-gap: 90px;
-  row-gap: 20px;
+  row-gap: 70px;
   position: relative;
   right: 20px;
   bottom: 70px;
@@ -127,5 +127,11 @@
 @media (max-width: 1200px) {
   .searchResults {
     column-gap: 10px;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .searchResults {
+    column-gap: 110px;
   }
 }
