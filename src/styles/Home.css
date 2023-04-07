@@ -130,12 +130,16 @@ li {
 
 @media (max-width: 1150px) {
   .thumbNails {
-    max-width: 250px;
+    width: 250px;
+  }
+
+  .worksList {
+    column-gap: 0;
   }
 }
 
 @media (max-width: 1200px) and (orientation: landscape) {
   .worksList {
-    column-gap: 200px;
+    column-gap: 100px;
   }
 }
