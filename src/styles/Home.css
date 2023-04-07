@@ -136,6 +136,6 @@ li {
 
 @media (max-width: 1200px) and (orientation: landscape) {
   .worksList {
-    column-gap: 90px;
+    column-gap: 200px;
   }
 }

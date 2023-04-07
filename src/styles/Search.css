@@ -107,7 +107,7 @@
   bottom: 70px;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 800px) {
   .searchResults {
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@
   }
 }
 
-@media (min-width: 1051px) and (max-width: 1100px) {
+@media (min-width: 801px) and (max-width: 1030px) {
   .searchResults {
     display: grid;
     grid-template-columns: 1fr 1fr;
