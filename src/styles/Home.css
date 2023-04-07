@@ -102,12 +102,16 @@ li {
   margin: auto;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .worksList {
     display: flex;
     flex-direction: column;
     position: relative;
     right: 27px;
+  }
+
+  .thumbNails {
+    margin-bottom: 18px;
   }
 
   * {
@@ -116,17 +120,17 @@ li {
   }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 801px) and (max-width: 1030px) {
   .worksList {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
-    column-gap: 10px;
-    overflow-x: hidden;
   }
+}
 
-  .homeContainer {
-    overflow-x: hidden;
+@media (max-width: 1150px) {
+  .thumbNails {
+    max-width: 250px;
   }
 }
 

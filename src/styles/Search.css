@@ -72,6 +72,12 @@
 
 .pageNavBar {
   display: flex;
+  position: relative;
+  bottom: 10px;
+}
+
+.pageNavBar > * {
+  font-size: large;
 }
 
 .arrowButton {
@@ -101,7 +107,7 @@
   bottom: 70px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   .searchResults {
     display: flex;
     flex-direction: column;
@@ -114,7 +120,7 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 1051px) and (max-width: 1100px) {
   .searchResults {
     display: grid;
     grid-template-columns: 1fr 1fr;
